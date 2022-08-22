@@ -1,0 +1,12 @@
+# Caches
+Thumbs.db
+.DS_Store
+.AppleDouble
+
+# Development
+.vscode
+.project
+.pydevproject
+.settings
+.idea/
+.history/

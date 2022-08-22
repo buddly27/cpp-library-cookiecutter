@@ -1,0 +1,11 @@
+{
+    "project": "Awesome Project",
+    "repository": "{{ cookiecutter.project.lower().replace(' ', '-') }}",
+    "cmake_project": "{{ cookiecutter.repository.replace('-', '_') }}",
+    "namespace": "{{ cookiecutter.cmake_project }}",
+    "description": "An awesome C++ library.",
+    "author": "Jeremy Retailleau",
+    "version": "0.1.0",
+    "date": "{% now 'local' %}",
+    "year": "{{ cookiecutter.date[:4] }}"
+}

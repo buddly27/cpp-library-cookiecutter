@@ -1,0 +1,13 @@
+{
+    "files": {
+        "doc/release/release_notes.rst": [
+            [
+                ".. release:: Upcoming",
+                ".. release:: [version]\n    :date: [version_date]"
+            ]
+        ]
+    },
+    "changelog": {
+        "enabled": false
+    }
+}
