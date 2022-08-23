@@ -42,7 +42,6 @@ endif()
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
     "{{ cookiecutter.cmake_project }}ConfigVersion.cmake"
-    VERSION {% raw %}${{% endraw %}{{ cookiecutter.cmake_project }}_VERSION}
     COMPATIBILITY AnyNewerVersion
 )
 
