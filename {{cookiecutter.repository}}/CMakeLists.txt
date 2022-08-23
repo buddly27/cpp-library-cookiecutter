@@ -40,13 +40,15 @@ if (BUILD_DOCS)
 endif()
 
 include(CMakePackageConfigHelpers)
+
 write_basic_package_version_file(
     "{{ cookiecutter.cmake_project }}ConfigVersion.cmake"
     COMPATIBILITY AnyNewerVersion
 )
 
 install(
-    FILES "{{ cookiecutter.cmake_project }}ConfigVersion.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/{{ cookiecutter.cmake_project }}ConfigVersion.cmake"
+    FILES
+        "{{ cookiecutter.cmake_project }}Config.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/{{ cookiecutter.cmake_project }}ConfigVersion.cmake"
     DESTINATION share/cmake/{{ cookiecutter.cmake_project }}
 )

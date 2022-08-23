@@ -16,3 +16,9 @@ install(
         ${CMAKE_INSTALL_INCLUDEDIR}
     FILES_MATCHING PATTERN "*.h"
 )
+
+install(EXPORT ${PROJECT_NAME}
+    FILE {{ cookiecutter.cmake_project }}Targets.cmake
+    NAMESPACE {{ cookiecutter.namespace }}::
+    DESTINATION share/cmake/{{ cookiecutter.cmake_project }}
+)
