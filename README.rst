@@ -13,7 +13,7 @@ Documentation
 Features
 ========
 
-* Project configuration using CMake_.
+* Project configuration using CMake_ (>= 3.20).
 * Testing using GTest_.
 * Documentation using Sphinx_ and the ReadTheDocs_ template.
 * API Reference using Doxygen_.
