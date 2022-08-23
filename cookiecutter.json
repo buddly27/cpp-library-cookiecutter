@@ -1,7 +1,7 @@
 {
     "project": "Awesome Project",
     "repository": "{{ cookiecutter.project.lower().replace(' ', '-') }}",
-    "cmake_project": "{{ cookiecutter.repository.replace('-', '_') }}",
+    "cmake_project": "{{ cookiecutter.repository.title().replace('-', '') }}",
     "namespace": "{{ cookiecutter.cmake_project }}",
     "description": "An awesome C++ library.",
     "author": "Jeremy Retailleau",
