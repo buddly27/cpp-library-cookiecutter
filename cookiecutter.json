@@ -1,11 +1,13 @@
 {
     "project": "Awesome Project",
-    "repository": "{{ cookiecutter.project.lower().replace(' ', '-') }}",
-    "cmake_project": "{{ cookiecutter.repository.title().replace('-', '') }}",
-    "namespace": "{{ cookiecutter.cmake_project }}",
+    "repository": "{{ cookiecutter.project | slugify }}",
+    "cmake_project": "{{ cookiecutter.project | camel_case }}",
+    "header_subfolder": "{{ cookiecutter.project | camel_case(capitalize=true) }}",
+    "namespace": "{{ cookiecutter.header_subfolder }}",
     "description": "An awesome C++ library.",
     "author": "Jeremy Retailleau",
     "version": "0.1.0",
     "date": "{% now 'local' %}",
-    "year": "{{ cookiecutter.date[:4] }}"
+    "year": "{{ cookiecutter.date[:4] }}",
+    "_extensions": ["jinja_extension.camel_case"]
 }

@@ -1,4 +1,4 @@
-#include "{{ cookiecutter.namespace }}/fibonacci.h"
+#include "{{ cookiecutter.header_subfolder }}/fibonacci.h"
 
 int {{ cookiecutter.namespace }}::fibonacci(unsigned int n)
 {

@@ -1,5 +1,5 @@
 add_library({{ cookiecutter.cmake_project }}
-    {{ cookiecutter.namespace }}/fibonacci.cpp
+    {{ cookiecutter.header_subfolder }}/fibonacci.cpp
 )
 
 target_include_directories({{ cookiecutter.cmake_project }}
