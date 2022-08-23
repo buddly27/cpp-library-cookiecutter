@@ -38,3 +38,16 @@ if (BUILD_DOCS)
 
     add_subdirectory(doc)
 endif()
+
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(
+    "{{ cookiecutter.cmake_project }}ConfigVersion.cmake"
+    VERSION {% raw %}${{% endraw %}{{ cookiecutter.cmake_project }}_VERSION}
+    COMPATIBILITY AnyNewerVersion
+)
+
+install(
+    FILES "{{ cookiecutter.cmake_project }}ConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/{{ cookiecutter.cmake_project }}ConfigVersion.cmake"
+    DESTINATION share/cmake/{{ cookiecutter.cmake_project }}
+)
