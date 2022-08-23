@@ -8,14 +8,12 @@
 Building
 ********
 
-Build the library as follows:
+Build the library as follows::
 
-```console
-cd {{ cookiecutter.repository }}
-mkdir build && cd build
-cmake -DCMAKE_INSTALL_PREFIX=/tmp/
-cmake --build . target install
-```
+    cd {{ cookiecutter.repository }}
+    mkdir build && cd build
+    cmake -DCMAKE_INSTALL_PREFIX=/tmp/
+    cmake --build . target install
 
 Here are a few CMake options that can be used to influence the building process:
 
