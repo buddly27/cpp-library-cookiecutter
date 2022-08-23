@@ -9,11 +9,12 @@ set(DOXYGEN_EXTENSION_MAPPING "h=C++")
 set(DOXYGEN_GENERATE_HTML YES)
 set(DOXYGEN_GENERATE_LATEX NO)
 set(DOXYGEN_GENERATE_TREEVIEW YES)
+set(DOXYGEN_DISABLE_INDEX NO)
 set(DOXYGEN_QUIET YES)
 
 doxygen_add_docs({{ cookiecutter.cmake_project }}ApiRefDoc
     "${PROJECT_SOURCE_DIR}/doc/doxygen/index.dox"
-    "${PROJECT_SOURCE_DIR}/src/{{ cookiecutter.namespace }}"
+    "${PROJECT_SOURCE_DIR}/src/{{ cookiecutter.library_header_subfolder }}"
 )
 
 add_custom_target(documentation ALL)

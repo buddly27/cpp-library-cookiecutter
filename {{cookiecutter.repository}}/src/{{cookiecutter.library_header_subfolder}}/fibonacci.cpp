@@ -1,6 +1,6 @@
-#include "{{ cookiecutter.header_subfolder }}/fibonacci.h"
+#include "{{ cookiecutter.library_header_subfolder }}/fibonacci.h"
 
-int {{ cookiecutter.namespace }}::fibonacci(unsigned int n)
+int {{ cookiecutter.cpp_namespace }}::fibonacci(unsigned int n)
 {
     int t0 = 0, t1 = 1, t;
 

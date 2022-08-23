@@ -4,7 +4,7 @@ from cookiecutter.utils import simple_filter
 
 
 @simple_filter
-def camel_case(value, capitalize=False):
+def camel_case(value, capitalize=True):
     """Convert *value* into Camel Case format.
 
     Example::

@@ -1,24 +1,24 @@
-add_library({{ cookiecutter.cmake_project }}
-    {{ cookiecutter.header_subfolder }}/fibonacci.cpp
+add_library({{ cookiecutter.library_name }}
+    {{ cookiecutter.library_header_subfolder }}/fibonacci.cpp
 )
 
-target_include_directories({{ cookiecutter.cmake_project }}
+target_include_directories({{ cookiecutter.library_name }}
     PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
-install(TARGETS {{ cookiecutter.cmake_project }} EXPORT ${PROJECT_NAME})
+install(TARGETS {{ cookiecutter.library_name }} EXPORT ${PROJECT_NAME})
 install(
     DIRECTORY
-        {{ cookiecutter.cmake_project }}
+        {{ cookiecutter.library_header_subfolder }}
     DESTINATION
         ${CMAKE_INSTALL_INCLUDEDIR}
     FILES_MATCHING PATTERN "*.h"
 )
 
 install(EXPORT ${PROJECT_NAME}
-    FILE {{ cookiecutter.cmake_project }}Targets.cmake
-    NAMESPACE {{ cookiecutter.namespace }}::
+    FILE {{ cookiecutter.library_name }}Targets.cmake
+    NAMESPACE {{ cookiecutter.cmake_target_namespace }}::
     DESTINATION share/cmake/{{ cookiecutter.cmake_project }}
 )

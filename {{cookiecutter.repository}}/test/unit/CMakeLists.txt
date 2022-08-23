@@ -1,7 +1,7 @@
 add_executable(testFibonacci testFibonacci.cpp)
 target_link_libraries(testFibonacci
     PRIVATE
-        {{ cookiecutter.cmake_project }}
+        {{ cookiecutter.library_name }}
         GTest::gtest
         GTest::gtest_main
 )
