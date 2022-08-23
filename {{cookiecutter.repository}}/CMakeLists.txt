@@ -14,7 +14,7 @@ option(BUILD_DOCS "Build documentation" ON)
 option(BUILD_SHARED_LIBS "Build Shared Library" ON)
 
 # Discover custom module finders.
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules")
 
 # Add project dependencies here.
 # (e.g. find_package(FOO 1.2.3 REQUIRED))
@@ -48,7 +48,7 @@ write_basic_package_version_file(
 
 install(
     FILES
-        "{{ cookiecutter.cmake_project }}Config.cmake"
+        "cmake/{{ cookiecutter.cmake_project }}Config.cmake"
         "${CMAKE_CURRENT_BINARY_DIR}/{{ cookiecutter.cmake_project }}ConfigVersion.cmake"
     DESTINATION share/cmake/{{ cookiecutter.cmake_project }}
 )
