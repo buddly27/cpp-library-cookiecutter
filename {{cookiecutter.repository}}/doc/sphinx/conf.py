@@ -2,6 +2,9 @@
 
 """{{ cookiecutter.project }} documentation build configuration file."""
 
+import os
+import re
+
 # -- General ------------------------------------------------------------------
 
 # Extensions.
@@ -20,6 +23,19 @@ master_doc = "index"
 # General information about the project.
 project = u"{{ cookiecutter.project }}"
 copyright = u"{{ cookiecutter.year }}, {{ cookiecutter.author }}"
+
+# Version
+with open(
+    os.path.join(
+        os.path.dirname(__file__), "..", "..", "CMakeLists.txt",
+    )
+) as _version_file:
+    _version = re.search(
+        r"project\(.* VERSION ([\d\\.]+)", _version_file.read(), re.DOTALL
+    ).group(1)
+
+version = _version
+release = _version
 
 # -- HTML output --------------------------------------------------------------
 

@@ -1,6 +1,12 @@
 {
     "files": {
-        "doc/release/release_notes.rst": [
+        "CMakeLists.txt": [
+            [
+                "project\\({{ cookiecutter.cmake_project }} VERSION ([\\d\\.]+)",
+                "project({{ cookiecutter.cmake_project }} VERSION [version]"
+            ]
+        ],
+        "doc/sphinx/release/release_notes.rst": [
             [
                 ".. release:: Upcoming",
                 ".. release:: [version]\n    :date: [version_date]"
