@@ -1,0 +1,4 @@
+/*!
+\namespace {{ cookiecutter.cpp_namespace }}
+Scope of the {{ cookiecutter.project }} library.
+*/

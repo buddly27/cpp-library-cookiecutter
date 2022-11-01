@@ -1,7 +1,7 @@
 #ifndef {{ cookiecutter.project.replace(" ", "_").upper() }}_EXAMPLE_H
 #define {{ cookiecutter.project.replace(" ", "_").upper() }}_EXAMPLE_H
-/// @file fibonacci.h
-/// @brief This is an example.
+/// \file fibonacci.h
+/// \brief This is an example.
 
 namespace {{ cookiecutter.cpp_namespace }} {
 
