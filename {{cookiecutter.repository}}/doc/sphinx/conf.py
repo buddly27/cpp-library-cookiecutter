@@ -4,15 +4,18 @@
 
 import os
 import re
+import doxygen
 
 # -- General ------------------------------------------------------------------
 
 # Extensions.
-extensions = [
-    "sphinx.ext.extlinks",
-    "sphinx.ext.intersphinx",
-    "lowdown"
-]
+extensions = ["lowdown"]
+
+if os.environ.get("READTHEDOCS"):
+    doxygen.create_cmake_config()
+    doxygen.build()
+
+    html_extra_path = ["./api"]
 
 # The suffix of source filenames.
 source_suffix = ".rst"
@@ -43,9 +46,3 @@ html_theme = "sphinx_rtd_theme"
 
 # If True, copy source rst files to output for reference.
 html_copy_source = True
-
-# -- Intersphinx --------------------------------------------------------------
-
-intersphinx_mapping = {
-    "python": ("http://docs.python.org/", None),
-}

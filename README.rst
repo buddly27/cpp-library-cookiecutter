@@ -20,6 +20,7 @@ Features
 * Release notes using Lowdown_.
 * Update Tag with `Semantic Versioning`_ using Versup_.
 * Formatting using `Clang-Format`_.
+* Documentation deployment config for https://readthedocs.org/
 
 Quickstart
 ==========
