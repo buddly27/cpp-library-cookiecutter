@@ -8,6 +8,7 @@
     "library_header_subfolder": "{{ cookiecutter.library_name }}",
     "description": "An awesome C++ library.",
     "author": "Jeremy Retailleau",
+    "github_group": "buddly27",
     "version": "0.1.0",
     "date": "{% now 'local' %}",
     "year": "{{ cookiecutter.date[:4] }}",

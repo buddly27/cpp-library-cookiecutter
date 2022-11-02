@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.20)
 
-project({{ cookiecutter.cmake_project }} VERSION {{ cookiecutter.version }} LANGUAGES CXX)
+project({{ cookiecutter.cmake_project }}
+    VERSION {{ cookiecutter.version }}
+    DESCRIPTION "{{ cookiecutter.description }}"
+    HOMEPAGE_URL "https://github.com/{{ cookiecutter.github_group }}/{{ cookiecutter.repository }}"
+    LANGUAGES CXX
+)
 
 include(GNUInstallDirs)
 

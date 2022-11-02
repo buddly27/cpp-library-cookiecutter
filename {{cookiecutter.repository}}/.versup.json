@@ -2,8 +2,8 @@
     "files": {
         "CMakeLists.txt": [
             [
-                "project\\({{ cookiecutter.cmake_project }} VERSION ([\\d\\.]+)",
-                "project({{ cookiecutter.cmake_project }} VERSION [version]"
+                "    VERSION ([\\d\\.]+)",
+                "    VERSION [version]"
             ]
         ],
         "doc/sphinx/release/release_notes.rst": [

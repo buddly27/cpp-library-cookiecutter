@@ -36,10 +36,10 @@ Building library
 ================
 
 Obtain a copy of the source by either downloading the
-`zipball <https://github.com/buddly27/{{ cookiecutter.repository }}/archive/main.zip>`_ or
+`zipball <https://github.com/{{ cookiecutter.github_group }}/{{ cookiecutter.repository }}/archive/main.zip>`_ or
 cloning the public repository::
 
-    git clone git@github.com:buddly27/{{ cookiecutter.repository }}.git
+    git clone git@github.com:{{ cookiecutter.github_group }}/{{ cookiecutter.repository }}.git
 
 Then you can build and install the library as follows::
 
