@@ -4,3 +4,111 @@
 Installing
 **********
 
+.. highlight:: bash
+
+The library can be installed using :term:`CMake` (any version over `3.20
+<https://cmake.org/cmake/help/latest/release/3.20.html>`_).
+
+.. _installing/dependencies:
+
+Dependencies
+============
+
+Custom search paths to dependent packages can be provided with the following
+:term:`CMake` options (or environment variable):
+
+============================= =========================================================
+Option / Environment Variable Description
+============================= =========================================================
+Doxygen_ROOT                  Add search path to :term:`doxygen` program.
+Sphinx_ROOT                   Add search path to :term:`sphinx-build <Sphinx>` program.
+ClangFormat_ROOT              Add search path to :term:`clang-format` program.
+============================= =========================================================
+
+.. note::
+
+    These feature is provided by :term:`CMake` under the `CMP0074
+    <https://cmake.org/cmake/help/latest/policy/CMP0074.html>`_ policy
+
+.. _installing/building:
+
+Building library
+================
+
+Obtain a copy of the source by either downloading the
+`zipball <https://github.com/buddly27/{{ cookiecutter.repository }}/archive/main.zip>`_ or
+cloning the public repository::
+
+    git clone git@github.com:buddly27/{{ cookiecutter.repository }}.git
+
+Then you can build and install the library as follows::
+
+    cd {{ cookiecutter.repository }}
+    cmake -DCMAKE_INSTALL_PREFIX=/path/to/destination -S . -B ./build ..
+    cmake --build ./build --target install
+
+Here are a few :term:`CMake` options that can be used to influence the building
+process:
+
+================= =================================================================
+Option            Description
+================= =================================================================
+BUILD_TESTS       Indicate whether tests should be built. Default is true.
+BUILD_DOCS        Indicate whether documentation should be built. Default is true.
+BUILD_SHARED_LIBS Indicate whether library should be built shared. Default is true.
+================= =================================================================
+
+.. _installing/clang-format:
+
+Apply clang-format
+==================
+
+Ensure that :term:`Clang-format` is installed for applying C++ style.
+
+Then run the program as follows::
+
+    cmake --build ./build --target format
+
+.. warning::
+
+    When contributing, please run this command before committing your code.
+
+.. _installing/documentation:
+
+Building documentation
+======================
+
+Ensure that :term:`Doxygen` and :term:`Sphinx` with the `lowdown
+<https://pypi.org/project/Lowdown/>`_ extension are installed.
+
+Then build the documentation as follows::
+
+    cmake --build ./build --target documentation
+
+.. note::
+
+    Documentation is automatically built with default installation, unless you
+    set the ``BUILD_DOCS`` :term:`CMake` option to false.
+
+.. _installing/test:
+
+Running tests
+=============
+
+Ensure that :term:`GTest` is installed.
+
+Once the library and all tests are built, you can run the tests using
+:term:`Ctest` within the build folder as follows::
+
+    ctest
+
+You can increase the verbosity and filter in one or several tests as follows::
+
+    ctest -VV
+    ctest -R MyTest.DoSomething -VV
+    ctest -R MyTest.* -VV
+
+.. note::
+
+    Tests are automatically built with default installation, unless you
+    set the ``BUILD_TESTS`` :term:`CMake` option to false.
