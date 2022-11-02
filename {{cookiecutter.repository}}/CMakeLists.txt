@@ -46,6 +46,9 @@ write_basic_package_version_file(
     COMPATIBILITY AnyNewerVersion
 )
 
+# Add format target if clang-format is found.
+find_package(ClangFormat 7)
+
 install(
     FILES
         "cmake/{{ cookiecutter.cmake_project }}Config.cmake"
