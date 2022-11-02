@@ -19,6 +19,7 @@ Features
 * API Reference using Doxygen_.
 * Release notes using Lowdown_.
 * Update Tag with `Semantic Versioning`_ using Versup_.
+* Formatting using `Clang-Format`_.
 
 Quickstart
 ==========
@@ -52,3 +53,4 @@ for your own needs.
 .. _Git: https://git-scm.com/
 .. _Versup: https://versup.readthedocs.io/en/latest/
 .. _Semantic Versioning: https://semver.org/
+.. _`Clang-Format`: https://clang.llvm.org/docs/ClangFormat.html
