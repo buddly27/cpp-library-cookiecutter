@@ -76,7 +76,9 @@ def fetch_api_doc_content():
     with open(path, "r") as stream:
         data = stream.read()
 
-    for option in re.findall(r"set\(\s*DOXYGEN.*\s*\)", data, re.MULTILINE):
+    for option in re.findall(
+        r"set\(\s*DOXYGEN.*?\s*\)", data, re.MULTILINE | re.DOTALL
+    ):
         content += "{}\n".format(option)
 
     # Update doxygen html output path.

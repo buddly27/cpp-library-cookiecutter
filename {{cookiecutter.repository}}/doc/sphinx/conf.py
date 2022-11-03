@@ -4,7 +4,6 @@
 
 import os
 import re
-import doxygen
 
 # -- General ------------------------------------------------------------------
 
@@ -12,6 +11,7 @@ import doxygen
 extensions = ["lowdown"]
 
 if os.environ.get("READTHEDOCS"):
+    import doxygen
     doxygen.create_cmake_config()
     doxygen.build()
 
