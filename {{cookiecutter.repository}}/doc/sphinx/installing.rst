@@ -58,6 +58,11 @@ BUILD_DOCS        Indicate whether documentation should be built. Default is tru
 BUILD_SHARED_LIBS Indicate whether library should be built shared. Default is true.
 ================= =================================================================
 
+The library can then be used by other programs or libraries via the following
+:term:`Cmake` target:
+
+* ``{{ cookiecutter.cmake_target_namespace }}::{{ cookiecutter.library_name }}``
+
 .. _installing/clang-format:
 
 Apply clang-format

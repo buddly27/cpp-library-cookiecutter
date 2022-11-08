@@ -51,19 +51,25 @@ if (BUILD_DOCS)
     add_subdirectory(doc)
 endif()
 
+# Add format target if clang-format is found.
+find_package(ClangFormat 7)
+
 include(CMakePackageConfigHelpers)
+
+configure_package_config_file(
+    "cmake/{{ cookiecutter.cmake_project }}Config.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/{{ cookiecutter.cmake_project }}Config.cmake"
+    INSTALL_DESTINATION share/cmake/{{ cookiecutter.cmake_project }}
+)
 
 write_basic_package_version_file(
     "{{ cookiecutter.cmake_project }}ConfigVersion.cmake"
     COMPATIBILITY AnyNewerVersion
 )
 
-# Add format target if clang-format is found.
-find_package(ClangFormat 7)
-
 install(
     FILES
-        "cmake/{{ cookiecutter.cmake_project }}Config.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/{{ cookiecutter.cmake_project }}Config.cmake"
         "${CMAKE_CURRENT_BINARY_DIR}/{{ cookiecutter.cmake_project }}ConfigVersion.cmake"
     DESTINATION share/cmake/{{ cookiecutter.cmake_project }}
 )
