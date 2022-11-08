@@ -21,6 +21,13 @@ option(BUILD_SHARED_LIBS "Build Shared Library" ON)
 # Discover custom module finders.
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules")
 
+# Silence "Up-to-date:" install messages
+set(CMAKE_INSTALL_MESSAGE NEVER)
+
+# Generate "compile_commands.json" for use by editors and other developer tools.
+# https://cmake.org/cmake/help/v3.5/variable/CMAKE_EXPORT_COMPILE_COMMANDS.html
+set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
+
 # Add project dependencies here.
 # (e.g. find_package(FOO 1.2.3 REQUIRED))
 
