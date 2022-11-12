@@ -50,13 +50,18 @@ Then you can build and install the library as follows::
 Here are a few :term:`CMake` options that can be used to influence the building
 process:
 
-================= =================================================================
-Option            Description
-================= =================================================================
-BUILD_TESTS       Indicate whether tests should be built. Default is true.
-BUILD_DOCS        Indicate whether documentation should be built. Default is true.
-BUILD_SHARED_LIBS Indicate whether library should be built shared. Default is true.
-================= =================================================================
+=================== =================================================================
+Option              Description
+=================== =================================================================
+BUILD_TESTS         Indicate whether tests should be built. Default is true.
+BUILD_DOCS          Indicate whether documentation should be built. Default is true.
+BUILD_SHARED_LIBS   Indicate whether library should be built shared. Default is true.
+CMAKE_CXX_STANDARD  Indicate the C++ standard requested. Default is C++ 14.
+=================== =================================================================
+
+The build type can be influenced by the `CMAKE_BUILD_TYPE
+<https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html>`_ option or
+environment variable. By default, the "Release" build type will be used.
 
 The library can then be used by other programs or libraries via the following
 :term:`Cmake` target:
